@@ -112,3 +112,22 @@ function reset() {
   const RESTART = "Let's try it again!";
   alert(RESTART);
 }
+
+// Test-Funktion für click-event
+function removeTransition(e) {
+  if (e.propertyName !== 'transform') return;
+  e.target.classList.remove('clicked');
+}
+
+// Funktioniert noch nicht ganz - querySelectorAll gibt error & bei trasitionend passiert nichts
+const button = document.querySelector('.btn');
+
+function clickMe() {
+  button.classList.add('clicked');
+}
+
+const buttons = Array.from(document.querySelectorAll('.btn'));
+buttons.forEach((button) =>
+  button.addEventListener('transitionend', removeTransition)
+);
+window.addEventListener('click', clickMe);

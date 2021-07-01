@@ -156,12 +156,26 @@ h1 {
   display: flex;
   justify-content: space-between;
   width: 30vw;
-  margin-top: 7vh;
+  margin-top: 5vh;
 }
 
 button {
+  height: 100px;
+  width: 100px;
   background-color: transparent;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 10px;
+  padding: 5px;
+  transition: all 0.7s ease;
+}
+
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.clicked {
+  background-color: #e9c46a;
 }
 
 .rock,
@@ -171,9 +185,13 @@ button {
 }
 
 .reset-section {
-  margin-top: 5vh;
+  margin-top: 3vh;
 }
 
 .reset {
+  height: 50px;
+  width: 50px;
   color: var(--reset-button);
+  border-radius: 5px;
+  padding: 5px;
 }
