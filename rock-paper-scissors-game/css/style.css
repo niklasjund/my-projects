@@ -97,23 +97,66 @@ h1 {
 /* ----------------- */
 
 .game {
-  /* Grid? */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  bottom: 5vh;
-  left: 10vw;
-  width: 100vh;
+  width: 34vw;
+  top: 28vh;
 }
 
-.player-score {
-  font-size: 30px;
+.players-section {
+  display: flex;
+  justify-content: space-between;
+  width: 34vw;
+}
+
+.player {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--player-color);
+}
+
+.comp {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--comp-color);
+}
+
+.scores-section {
+  display: flex;
+  justify-content: space-between;
+  width: 30.5vw;
+}
+
+.player-score,
+.comp-score {
+  font-size: 36px;
   font-weight: 600;
   color: var(--player-color);
 }
 
 .comp-score {
-  font-size: 30px;
-  font-weight: 600;
   color: var(--comp-color);
+}
+
+.alert-section {
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+.game-alert {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.button-section {
+  display: flex;
+  justify-content: space-between;
+  width: 30vw;
+  margin-top: 7vh;
 }
 
 button {
@@ -125,6 +168,10 @@ button {
 .paper,
 .scissors {
   color: var(--main-color);
+}
+
+.reset-section {
+  margin-top: 5vh;
 }
 
 .reset {
