@@ -130,14 +130,14 @@ h1 {
   width: 30.5vw;
 }
 
-.player-score,
-.comp-score {
+#player-score,
+#comp-score {
   font-size: 36px;
   font-weight: 600;
   color: var(--player-color);
 }
 
-.comp-score {
+#comp-score {
   color: var(--comp-color);
 }
 
@@ -147,7 +147,7 @@ h1 {
   width: auto;
 }
 
-.game-alert {
+#game-alert {
   font-size: 28px;
   font-weight: 600;
 }
@@ -178,9 +178,9 @@ button:hover {
   background-color: #e9c46a;
 }
 
-.rock,
-.paper,
-.scissors {
+#rock,
+#paper,
+#scissors {
   color: var(--main-color);
 }
 
@@ -188,7 +188,7 @@ button:hover {
   margin-top: 3vh;
 }
 
-.reset {
+#reset {
   height: 50px;
   width: 50px;
   color: var(--reset-button);
