@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 :root {
-  --main-background: #fff;
+  --main-bg: #fafbfc;
+  --btn-clr-left: #f72585;
+  --btn-clr-right: #480ca8;
 }
 
 * {
@@ -14,6 +18,8 @@ body {
   align-items: center;
   width: 100vw;
   height: 100vh;
+  background-color: var(--main-bg);
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -24,4 +30,39 @@ body {
   border: 0.5px solid black;
   height: 20px;
   width: 20px;
+}
+
+button {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+#clickme {
+  position: relative;
+  height: 75px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    45deg,
+    #f72585 0%,
+    #480ca8 50%,
+    #f72585 100%
+  );
+  background-size: 200% auto;
+  opacity: 1;
+  transition: background-position 0.5s ease, opacity 2s ease;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+#clickme:hover {
+  background-position: right center;
+  cursor: pointer;
+  position: relative;
+}
+
+#clickme:active {
+  transform: scale(0.9);
 }
