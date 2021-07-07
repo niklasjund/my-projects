@@ -1,3 +1,14 @@
+/* 
+
+    NOTES: 
+
+    - Container (pixelBoxes) langsam einblenden lassen
+    - Max-Wert für rows/boxes 64 (dementsprechend "user-Angabe + 1" in for-loops angeben)
+    - User-Input für den Reset, um Angabe für neue Große (max 64x64) zu erhalten
+    - Reset-Button evtl neu positionieren & animieren, da sonst im Weg
+
+*/
+
 const clickMe = document.getElementById('clickme');
 const container = document.querySelector('.container');
 const resetButton = document.getElementById('reset');
@@ -23,11 +34,11 @@ function startEtch(e) {
 
 let k = 0;
 function createEtch() {
-  for (let i = 1; i < 17; i++) {
+  for (let i = 1; i < 65; i++) {
     const rows = document.createElement('div');
     rows.classList.add('row');
     rows.id = `row-${i}`;
-    for (j = 1; j < 17; j++) {
+    for (j = 1; j < 65; j++) {
       k++;
       const boxes = document.createElement('div');
       boxes.classList.add('box');
@@ -35,9 +46,7 @@ function createEtch() {
       rows.appendChild(boxes);
     }
     container.appendChild(rows);
-    console.log(i);
   }
-
   testFunction();
 }
 
@@ -49,10 +58,13 @@ function testFunction() {
 
 function hoverBox() {
   this.style.backgroundColor = '#24292e';
+  //   this.style.borderColor = 'black'; Border besser weglassen(?)
 }
 
 resetButton.addEventListener('click', resetEtch);
 
 function resetEtch() {
-  Array.from(pixelBox).forEach((div) => (div.style.backgroundColor = '#fff'));
+  Array.from(pixelBox).forEach(
+    (div) => (div.style.backgroundColor = '#fff') // (div.style.borderColor = '#d1d5da') Border besser weglassen(?)
+  );
 }
