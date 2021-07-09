@@ -17,7 +17,6 @@ const pixelBox = document.getElementsByClassName('box');
 clickMe.addEventListener('click', buttonClick);
 
 function buttonClick() {
-  console.log('Clicked!');
   this.style.opacity = 0;
   this.classList.add('moveUp');
   this.addEventListener('transitionend', startEtch);
@@ -29,16 +28,19 @@ function startEtch(e) {
     createEtch();
     resetButton.style.opacity = 1;
     resetButton.classList.add('moveReset');
+    container.style.opacity = 1;
   }
 }
 
+let userInput = 32;
 let k = 0;
+
 function createEtch() {
-  for (let i = 1; i < 65; i++) {
+  for (let i = 0; i < userInput; i++) {
     const rows = document.createElement('div');
     rows.classList.add('row');
     rows.id = `row-${i}`;
-    for (j = 1; j < 65; j++) {
+    for (j = 0; j < userInput; j++) {
       k++;
       const boxes = document.createElement('div');
       boxes.classList.add('box');
@@ -51,8 +53,8 @@ function createEtch() {
 }
 
 function testFunction() {
-  Array.from(pixelBox).forEach((div) =>
-    div.addEventListener('mouseover', hoverBox)
+  Array.from(pixelBox).forEach(
+    (div) => div.addEventListener('click', hoverBox) // für hover 'mouseover'
   );
 }
 
@@ -65,6 +67,8 @@ resetButton.addEventListener('click', resetEtch);
 
 function resetEtch() {
   Array.from(pixelBox).forEach(
-    (div) => (div.style.backgroundColor = '#fff') // (div.style.borderColor = '#d1d5da') Border besser weglassen(?)
+    (div) => div.remove() // (div.style.backgroundColor = '#fff') // (div.style.borderColor = '#d1d5da') Border besser weglassen(?)
   );
+  userInput = prompt('Size: '); // evtl später "Check" einbinden, ob Zahlen eingegeben wurden + Maximum
+  createEtch();
 }
